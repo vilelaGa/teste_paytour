@@ -4,6 +4,7 @@ namespace App\FuncoesBack;
 
 use App\DbConnect\DbConnect;
 use App\Cadastrar\Cadastrar;
+use App\EnviarEmail\EnviarEmail;
 
 
 class FuncoesBack
@@ -73,6 +74,9 @@ class FuncoesBack
             $objetoEnvi->escolaridade = $escolaridade;
             $objetoEnvi->obs = $obs;
             $objetoEnvi->cadastrar();
+
+            EnviarEmail::EnviarCadastro($email, $nome);
+
         }
     }
 }

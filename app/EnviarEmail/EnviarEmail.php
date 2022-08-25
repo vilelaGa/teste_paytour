@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 class EnviarEmail
 {
-    public static function EnviarCadastro($email, $nome, $cpf)
+    public static function EnviarCadastro($email, $nome)
     {
         //Formatação do dados
         $nome = strtolower($nome);
@@ -33,8 +33,8 @@ class EnviarEmail
             $mail->Host = 'smtp.office365.com';
             $mail->Port = 587;
             // Define o remetente
-            $mail->setFrom(EMAIL, 'Equipe Alumni UBM');
-            $mail->addReplyTo(EMAIL, 'Equipe Alumni UBM');
+            $mail->setFrom(EMAIL, 'Equipe RH Teste Paytour');
+            $mail->addReplyTo(EMAIL, 'Equipe RH Teste Paytour');
             // Define o destinatário
             $mail->addAddress($email);
             // Conteúdo da mensagem
@@ -60,7 +60,7 @@ class EnviarEmail
 									<p>Caro(a) <strong>$nome</strong>,</p>
 									<p>Foi solicitada a verificação para existência de aluno no arquivo da instituição <a href='https://ubm.br'>UBM</a>.<br /><br />
 									<strong>Dados do solicitante:</strong><br />
-									CPF: $cpf <br />
+									
 									Nome: $nome  <br />
 									Email: $email  <br />
 									<br />

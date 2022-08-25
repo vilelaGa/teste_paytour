@@ -19,6 +19,19 @@
 
 <body>
 
+    <!-- início do preloader -->
+    <div id="preloader">
+        <div class="inner">
+            <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- fim do preloader -->
+
     <nav class="navbar bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -111,7 +124,7 @@
                     if (isset($_SESSION['Escolari-invalido'])) :
                     ?>
                         <div class="alert alert-danger" role="alert">
-                            Selecione a escolaridade 
+                            Selecione a escolaridade
                         </div>
                         <style>
                             #escolaridade {
@@ -246,6 +259,18 @@
         $(document).ready(function() {
             $('#telefone').mask('(00) 0000-0000')
         });
+    </script>
+
+    <script>
+        //<![CDATA[
+        $(window).on('load', function() {
+            $('#preloader .inner').fadeOut();
+            $('#preloader').delay(350).fadeOut('slow');
+            $('body').delay(350).css({
+                'overflow': 'visible'
+            });
+        })
+        //]]>
     </script>
 
 </body>
