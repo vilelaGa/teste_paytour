@@ -92,3 +92,8 @@
     border-color: #9548e4 !important;
     box-shadow: 0 0 1em rgb(197 197 197 / 56%);
 }
+
+footer {
+    background-color: #9548e4;
+    padding: 30px;
+}
