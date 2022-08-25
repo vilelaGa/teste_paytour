@@ -83,3 +83,12 @@
 }
 
 /* end: Preloader */
+
+.navbar {
+    box-shadow: 0 0 1em rgb(197 197 197 / 82%);
+}
+
+.form-control {
+    border-color: #9548e4 !important;
+    box-shadow: 0 0 1em rgb(197 197 197 / 56%);
+}
