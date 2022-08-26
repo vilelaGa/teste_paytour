@@ -11,8 +11,8 @@ class DbConnect
     //Constantes de conexão com Db
     const SERVER = "localhost";
     const DATABASE_NAME = "u350863438_cadastro";
-    const USER = "u350863438_teste_paytour";
-    const PASSWORD = "bJ*Xy909";
+    const USER = "";
+    const PASSWORD = "";
 
     //Variavel tabela
     private $tabela;
