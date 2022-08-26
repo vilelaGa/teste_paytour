@@ -263,6 +263,7 @@
                     <center>
                         <a style="font-size: 25px;" href="https://www.linkedin.com/in/vilelaga/" target="_blank" class="text-light"><i class="bi bi-linkedin"></i></a>
                         <a style="font-size: 25px;" href="https://github.com/vilelaGa" target="_blank" class="text-light"><i class="bi bi-github"></i></a>
+                        <br><a style="text-decoration: none;" href="https://ekballo.digital" target="_blank"><span class="text-light"><i><b>Ekballo</b></i></span></a>
                     </center>
                 </div>
                 <div class="col-md-4"></div>

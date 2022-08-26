@@ -10,9 +10,9 @@ class DbConnect
 {
     //Constantes de conexão com Db
     const SERVER = "localhost";
-    const DATABASE_NAME = "cadastro";
-    const USER = "root";
-    const PASSWORD = "";
+    const DATABASE_NAME = "u350863438_cadastro";
+    const USER = "u350863438_teste_paytour";
+    const PASSWORD = "bJ*Xy909";
 
     //Variavel tabela
     private $tabela;
@@ -81,7 +81,7 @@ class DbConnect
         $fields = array_keys($values);
         $binds =  array_pad([], count($fields), '?');
 
-        $query = 'use cadastro; INSERT INTO ' . $this->tabela . '(' . implode(',', $fields) . ') VALUES(' . implode(',', $binds) . ')';
+        $query = 'use u350863438_cadastro; INSERT INTO ' . $this->tabela . '(' . implode(',', $fields) . ') VALUES(' . implode(',', $binds) . ')';
 
         // var_dump($query);
         // echo '<pre>';

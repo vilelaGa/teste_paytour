@@ -22,7 +22,7 @@ class Cadastrar
      * @param 1
      * @var string $post que vem do form
      */
-    public static function upload($post)
+    public function upload($post)
     {
         // var_dump($post);
         // die();
@@ -33,6 +33,7 @@ class Cadastrar
 
         // echo $tmp;
         // die();
+        $_UP['pasta'] = 'upload/';
 
         $extensions = "vnd.openxmlformats-officedocument.wordprocessingml.document|pdf|msword";
         $ext = pathinfo($name, PATHINFO_EXTENSION);
@@ -42,14 +43,8 @@ class Cadastrar
             header("location: $url/");
         } else {
             $novoArquivo =  uniqid() . "." . $ext;
-
-            if (move_uploaded_file($tmp, 'upload/' . $novoArquivo)) {
-                echo "<script>alert('upload')</script>";
-            } else {
-                echo "<script>alert('Not uploaded')</script>";
-            };
-            // echo $res;
-            die();
+            move_uploaded_file($tmp, $_UP['pasta'] . $novoArquivo);
+            EnviarEmail::EnviarCadastro($this->email, $this->nome);
             return $novoArquivo;
         }
     }
@@ -78,7 +73,7 @@ class Cadastrar
             'data_time' => date('Y-m-d H:i:s')
         ]);
 
-        EnviarEmail::EnviarCadastro($this->email, $this->nome);
+        // EnviarEmail::EnviarCadastro($this->email, $this->nome);
 
         $url = URL_BASE;
         header("Location: $url/");
