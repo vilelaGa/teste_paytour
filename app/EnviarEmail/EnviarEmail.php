@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 class EnviarEmail
 {
-    public static function EnviarCadastro($email, $nome)
+    public static function EnviarCadastro($email, $nome, $telefone, $cargo, $escolaridade)
     {
         //Formatação do dados
         $nome = strtolower($nome);
@@ -157,6 +157,9 @@ class EnviarEmail
             Recebemos o seu currículo, nossa equipe vai analisar e passar um feedback.
             </p>
             <p style="margin: 20px 0 20px 0;">E-mail: <strong> ' . $email . ' </strong></p>
+            <p style="margin: 20px 0 20px 0;">Telefone: <strong> ' . $telefone . ' </strong></p>
+            <p style="margin: 20px 0 20px 0;">Cargo: <strong> ' . $cargo . ' </strong></p>
+            <p style="margin: 20px 0 20px 0;">Escolaridade: <strong> ' . $escolaridade . ' </strong></p>
             </td>
             </tr>
             <!-- BULLETPROOF BUTTON -->

@@ -12,6 +12,7 @@ class Cadastrar
     public $nome;
     public $email;
     public $telefone;
+    public $cargo;
     public $escolaridade;
     public $obs;
     public $arquivo;
@@ -44,7 +45,9 @@ class Cadastrar
         } else {
             $novoArquivo =  uniqid() . "." . $ext;
             move_uploaded_file($tmp, $_UP['pasta'] . $novoArquivo);
-            EnviarEmail::EnviarCadastro($this->email, $this->nome);
+            EnviarEmail::EnviarCadastro($this->email, $this->nome, $this->telefone, $this->cargo, $this->escolaridade);
+            session_start();
+            $_SESSION['envio'] = true;
             return $novoArquivo;
         }
     }

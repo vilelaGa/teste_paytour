@@ -49,6 +49,18 @@
             <div class="col-md-6">
 
                 <div id="resposta">
+                     <!-- Envio -->
+                     <?php
+                    if (isset($_SESSION['envio'])) :
+                    ?>
+                        <div class="alert alert-success mt-3" role="alert">
+                            Enviado
+                        </div>
+                    <?php endif;
+                    unset($_SESSION['envio'])
+                    ?>
+                    <!-- Envio -->
+
                     <!-- NOME -->
                     <?php
                     if (isset($_SESSION['Nome-invalido'])) :
