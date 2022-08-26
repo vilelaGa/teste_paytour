@@ -4,6 +4,7 @@
 namespace App\Cadastrar;
 
 use App\DbConnect\DbConnect;
+use App\EnviarEmail\EnviarEmail;
 
 class Cadastrar
 {
@@ -30,6 +31,9 @@ class Cadastrar
         $name = $file['name'];
         $tmp = $file['tmp_name'];
 
+        // echo $tmp;
+        // die();
+
         $extensions = "vnd.openxmlformats-officedocument.wordprocessingml.document|pdf|msword";
         $ext = pathinfo($name, PATHINFO_EXTENSION);
 
@@ -38,7 +42,14 @@ class Cadastrar
             header("location: $url/");
         } else {
             $novoArquivo =  uniqid() . "." . $ext;
-            move_uploaded_file($tmp, 'upload/' . $novoArquivo);
+
+            if (move_uploaded_file($tmp, 'upload/' . $novoArquivo)) {
+                echo "<script>alert('upload')</script>";
+            } else {
+                echo "<script>alert('Not uploaded')</script>";
+            };
+            // echo $res;
+            die();
             return $novoArquivo;
         }
     }
@@ -66,6 +77,9 @@ class Cadastrar
             'ip_user' => $_SERVER["REMOTE_ADDR"],
             'data_time' => date('Y-m-d H:i:s')
         ]);
+
+        EnviarEmail::EnviarCadastro($this->email, $this->nome);
+
         $url = URL_BASE;
         header("Location: $url/");
     }

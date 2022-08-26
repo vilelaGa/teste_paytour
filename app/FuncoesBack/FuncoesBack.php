@@ -40,7 +40,7 @@ class FuncoesBack
             $_SESSION['Cargo-invalido'] = true;
             header("location: $url/");
             die();
-        } else if (empty($escolaridade) || $escolaridade === 'Escolaridade') {
+        } else if (empty($escolaridade) || $escolaridade === 'Escolaridade *') {
             $_SESSION['Escolari-invalido'] = true;
             header("location: $url/");
             die();
@@ -74,9 +74,6 @@ class FuncoesBack
             $objetoEnvi->escolaridade = $escolaridade;
             $objetoEnvi->obs = $obs;
             $objetoEnvi->cadastrar();
-
-            EnviarEmail::EnviarCadastro($email, $nome);
-
         }
     }
 }

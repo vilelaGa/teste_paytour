@@ -1,5 +1,5 @@
 RewriteEngine On
-#Options All -Indexes
+Options All -Indexes
 
 ## ROUTER WWW Redirect.
 #RewriteCond %{HTTP_HOST} !^www\. [NC]
@@ -10,7 +10,7 @@ RewriteEngine On
 #RewriteCond %{HTTPS} off
 #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# ROUTER URL Rewrite
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteCond %{SCRIPT_FILENAME} !-d
+#ROUTER URL Rewrite
+#RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?route=/$1 [L,QSA]
